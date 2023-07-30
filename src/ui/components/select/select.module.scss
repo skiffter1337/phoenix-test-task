@@ -1,6 +1,7 @@
 .container {
   display: flex;
   position: relative;
+  flex: 0 1 30%;
   .select {
     font-size: 12px;
     padding: 0 50px 0 10px;

@@ -2,7 +2,11 @@
   position: relative;
   display: flex;
   justify-content: center;
+  flex: 0 1 40%;
 
+  input {
+    flex: 0 1 45%;
+  }
 
   .start_time {
     border-right: none;
@@ -23,4 +27,5 @@
     font-size: 12px;
   }
 }
+
 

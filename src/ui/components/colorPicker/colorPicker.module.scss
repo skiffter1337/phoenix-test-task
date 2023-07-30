@@ -1,6 +1,6 @@
 @use 'src/styles/mixins';
 .color_picker_block {
-  @include mixins.flex(row, flex-start, enter);
+  @include mixins.flex(row, flex-start, center);
   gap: 70px;
 
   .color_picker_label {

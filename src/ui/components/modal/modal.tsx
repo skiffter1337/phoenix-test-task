@@ -1,11 +1,11 @@
-import {FC, ReactNode} from 'react'
+import {FC, forwardRef, ReactNode} from 'react'
+
 
 import * as Dialog from '@radix-ui/react-dialog'
 
 
-
 import s from './modal.module.scss'
-import { ReactComponent as CloseModal } from './../../../images/svg/icons/closeModal/closeModal.svg'
+import {CloseModal} from "../../../images/svg/icons/closeModal/closeModal";
 
 type ModalPropsType = {
     title?: string
@@ -16,13 +16,14 @@ type ModalPropsType = {
     isSeparator?: boolean
 }
 const Root: FC<ModalPropsType> = ({
-                                      title,
-                                      trigger,
-                                      children,
-                                      isOpen,
-                                      onOpenChange,
-                                      isSeparator = true,
-                                  }) => {
+                                                 title,
+                                                 trigger,
+                                                 children,
+                                                 isOpen,
+                                                 onOpenChange,
+                                                 isSeparator = true,
+                                             }) => {
+
     return (
         <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
             <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>

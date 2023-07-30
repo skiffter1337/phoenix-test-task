@@ -75,7 +75,7 @@ export const Content = () => {
                 <Tabs setWorkDays={setWorkDays} workDays={workDays}/>
             </div>
             <div className={s.row}>
-                <Select options={breakTimeOptions} onChange={selectBreakTime} defaultValue={breakTime}/>
+                <Select options={breakTimeOptions} onChange={selectBreakTime} defaultValue={breakTime} />
                 <Counter title={'Часов в день'} changeValue={changeHoursPerDay} value={hoursPerDay}
                          minValue={minHoursPerDay}
                          maxValue={maxHoursPerDay}/>
