@@ -1,0 +1,35 @@
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .tab {
+      flex-grow: 1;
+      text-align: center;
+      cursor: pointer;
+      background-color: white;
+      color: #000;
+      padding: 10px;
+      border: 1px solid #ccc;
+      font-size: 12px;
+
+      &.active {
+        background-color: #5b8dee;
+        color: white;
+      }
+
+      &:hover {
+        background-color: #5b8dee;
+        color: white;
+      }
+    }
+  }
+}
+
+
+
