@@ -56,6 +56,7 @@ export const EditTimetable: FC<EditTimetableType> = ({trigger}) => {
         console.log(data)
         onCloseChange()
     }
+
     return (
         <Modal.Root
             title={'Редактирование расписания'}
