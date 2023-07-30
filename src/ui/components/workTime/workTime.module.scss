@@ -6,12 +6,19 @@
 
   input {
     flex: 0 1 45%;
+    text-align: center;
   }
 
+  input[type='time'] {
+    text-align: center;
+    font-size: 12px;
+
+  }
   .start_time {
     border-right: none;
     border-radius: 6px 0 0 6px;
   }
+
   .end_time {
     border-left: none;
     border-radius: 0 6px 6px 0;
