@@ -11,7 +11,7 @@ type ModalPropsType = {
     title?: string
     trigger?: ReactNode
     isOpen?: boolean
-    onOpenChange?: () => void
+    onOpenChange?: (isOpen: boolean) => void
     children?: ReactNode
     isSeparator?: boolean
 }

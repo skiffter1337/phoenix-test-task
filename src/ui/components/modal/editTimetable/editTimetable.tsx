@@ -10,22 +10,21 @@ type EditTimetableType = {
 export const EditTimetable: FC<EditTimetableType> = ({trigger}) => {
 
     const [isOpen, setIsOpen] = useState(false)
-    const onOpenChange = () => setIsOpen(true)
 
     const onCloseChange = () => setIsOpen(false)
 
-
+    const sendRequest = () => console.log('123')
     return (
-        <Modal.Root title={'Редактирование расписания'} isSeparator={true} isOpen={isOpen} onOpenChange={onOpenChange}
+        <Modal.Root title={'Редактирование расписания'} isSeparator={true} isOpen={isOpen} onOpenChange={setIsOpen}
                     trigger={trigger}>
             <Modal.Body>
-                    <Content/>
+                <Content/>
             </Modal.Body>
             <Modal.Footer>
                 <Button className={s.close_button} onClick={onCloseChange}>
                     Отмена
                 </Button>
-                <Button className={s.add_timetable_button}>
+                <Button className={s.add_timetable_button} onClick={sendRequest}>
                     Добавить расписание
                 </Button>
             </Modal.Footer>
