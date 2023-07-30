@@ -1,0 +1,42 @@
+@use 'src/styles/mixins';
+.container {
+  @include mixins.flex(column, center);
+  max-width: 700px;
+  width: 100%;
+  gap: 20px;
+
+
+  .school_name_and_color_picker_row {
+    @include mixins.flex(row, space-between, center);
+    width: 100%;
+
+    .school_name_input {
+      max-width: 120px;
+    }
+  }
+
+  .row {
+    @include mixins.flex(row, space-between, center);
+    width: 100%;
+    gap: 20px;
+  }
+
+  .teacher_and_audience_row {
+    @include mixins.flex(row, space-between);
+    gap: 20px;
+
+    .teachers_selector {
+      width: 66%;
+    }
+    .audience_selector {
+      width: 33%;
+    }
+
+  }
+
+  .hint {
+    font-size: 12px;
+    padding: 10px;
+    background-color: #ffdbe7;
+  }
+}

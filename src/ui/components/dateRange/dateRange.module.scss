@@ -1,17 +1,12 @@
+@use 'src/styles/mixins';
 .date_range {
+  @include mixins.flex(row, center);
   position: relative;
-  display: flex;
-  justify-content: center;
-
-
-  input::-webkit-calendar-picker-indicator {
-    opacity: 0;
-    text-align: center;
-  }
 
   input[type='date'] {
     text-align: center;
     font-size: 12px;
+
   }
   .start_date {
     border-right: none;
@@ -23,12 +18,10 @@
   }
 
   .until {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include mixins.flex(row, center, center);
     color: white;
     background-color: #bdbdbd;
-    width: 3em;
+    padding: 10px;
     font-size: 12px;
   }
 }

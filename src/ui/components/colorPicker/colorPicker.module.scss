@@ -1,0 +1,28 @@
+@use 'src/styles/mixins';
+.color_picker_block {
+  @include mixins.flex(row, flex-start, enter);
+  gap: 70px;
+
+  .color_picker_label {
+    display: inline-block;
+  }
+
+  .color_picker {
+
+    position: relative;
+    width: 70px;
+    cursor: pointer;
+    padding: 2px 25px 2px 4px;
+    border-radius: 0;
+    border: 0;
+    background-color: #eee;
+  }
+
+  .color_picker::after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-40%);
+    content: url('../../../images/svg/icons/arrowDown/arrowDown.svg');
+  }
+}

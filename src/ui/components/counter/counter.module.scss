@@ -1,0 +1,56 @@
+@use 'src/styles/mixins';
+.counter {
+  display: flex;
+  height: 40px;
+  .counter_button {
+    all: unset;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 20px;
+    background-color: #5b8dee;
+    padding: 10px;
+
+    &.left {
+      border-radius: 6px 0 0 6px;
+    }
+
+    &.right {
+      border-radius: 0 6px 6px 0;
+    }
+
+    &:hover {
+      transition: 0.2s;
+      background: rgba(#5b8dee, 0.7);
+    }
+
+    &:disabled {
+      background: rgba(#5b8dee, 0.7);
+    }
+  }
+
+  .content {
+    @include mixins.flex(row, center, center);
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+
+    .value_display {
+      display: flex;
+      justify-content: center;
+      font-size: 12px;
+      width: 70px;
+    }
+
+    .title {
+      @include mixins.flex(row, center, center);
+      height: 100%;
+      background-color: #f0f4f7;
+      line-height: 1;
+      padding: 0 8px;
+      width: 40px;
+      font-size: 12px;
+      border-left: 1px solid #ccc;
+    }
+  }
+}

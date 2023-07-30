@@ -1,43 +1,41 @@
-import React, { useState } from 'react';
+import React, {FC} from 'react';
 import s from './tabs.module.scss';
-import { Button } from '../components/button/button';
+import { Button } from '../button/button';
+import {MON_WED_FRI, TUE_THU} from '../../../common/constans/daysOfWeek';
+import {workDaysTabs} from "../../../common/constans/workDaysTabs";
 
-interface Tab {
+export type Tab = {
     label: string;
     value: string;
-    isActive: boolean;
 }
 
-export const Tabs: React.FC = () => {
-    const tabs: Tab[] = [
-        { label: 'ПН/СР/ПТ', value: 'ПН/СР/ПТ', isActive: true },
-        { label: 'ВТ/ЧТ', value: 'ВТ/ЧТ', isActive: false },
-        { label: 'ПН', value: 'ПН', isActive: false },
-        { label: 'ВТ', value: 'ВТ', isActive: false },
-        { label: 'СР', value: 'СР', isActive: false },
-        { label: 'ЧТ', value: 'ЧТ', isActive: false },
-        { label: 'ПТ', value: 'ПТ', isActive: false },
-        { label: 'СБ', value: 'СБ', isActive: false },
-        { label: 'ВС', value: 'ВС', isActive: false },
-    ];
+type TabsPropsType = {
+    setWorkDays: (days: string[]) => void
+    workDays: string[]
+}
 
-    const handleTabClick = (tab: Tab) => {
-        const updatedTabs = tabs.map((t) => ({
-            ...t,
-            isActive: t.label === tab.label,
-        }));
-        setActiveTab(updatedTabs);
+export const Tabs: FC<TabsPropsType> = ({setWorkDays, workDays}) => {
+
+    const handleTabClick = (day: Tab) => {
+        if (workDays.includes(day.value)) {
+            setWorkDays(workDays.filter((d) => d !== day.value));
+        } else {
+            setWorkDays([...workDays, day.value]);
+        }
     };
 
-    const [activeTab, setActiveTab] = useState(tabs);
+    const setMonWedFri = () => setWorkDays(MON_WED_FRI);
+    const setTueThu = () => setWorkDays(TUE_THU);
 
     return (
         <div className={s.tabs}>
             <div className={s.buttons}>
-                {activeTab.map((tab) => (
+                <Button className={s.tab} onClick={setMonWedFri}>{'ПН/СР/ПТ'}</Button>
+                <Button className={s.tab} onClick={setTueThu}>{'ВТ/ЧТ'}</Button>
+                {workDaysTabs.map((tab) => (
                     <Button
                         key={tab.label}
-                        className={`${s.tab} ${tab.isActive ? s.active : ''}`}
+                        className={`${s.tab} ${workDays.includes(tab.value) ? s.active : ''}`}
                         onClick={() => handleTabClick(tab)}
                     >
                         {tab.label}
