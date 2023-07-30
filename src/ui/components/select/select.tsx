@@ -1,19 +1,20 @@
 import React, {ChangeEvent, FC} from 'react';
 import s from './select.module.scss';
+import {BreakTimeOptionsType} from "../../../common/constans/breakTimeOptions";
 
 export type OptionsType = {
     id: string
     value: string | null
     title: string
     disabled: boolean
-};
+}
 
 type SelectPropsType = {
     placeholder?: string
-    options: OptionsType[]
+    options: BreakTimeOptionsType[] | OptionsType[]
     className?: string
     onChange: (event: ChangeEvent<HTMLSelectElement>) => void
-    defaultValue?: string | null
+    defaultValue?: string | null | number
 };
 
 export const Select: FC<SelectPropsType> = ({

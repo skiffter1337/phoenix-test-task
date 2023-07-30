@@ -28,8 +28,8 @@ type ContentPropsType = {
     setWorkDays: (days: string[]) => void
     workDays: string[]
     setEndWorkTime: (time: string) => void
-    setBreakTime: (breakTime: string) => void
-    breakTime: string | null
+    setBreakTime: (breakTime: number) => void
+    breakTime: number
     startLessonTime: string
     endLessonTime: string
     setTeacher: (teacher: string) => void
@@ -61,7 +61,6 @@ export const Content: FC<ContentPropsType> = ({
                                                   setClassRoom,
                                                   classRoom
                                               }) => {
-
 
 
     const minHoursInCourse = 1
@@ -108,7 +107,7 @@ export const Content: FC<ContentPropsType> = ({
                 <Tabs setWorkDays={setWorkDays} workDays={workDays}/>
             </div>
             <div className={s.row}>
-                <Select options={breakTimeOptions} onChange={selectBreakTime} defaultValue={breakTime}/>
+                    <Select options={breakTimeOptions} onChange={selectBreakTime} defaultValue={breakTime}/>
                 <Counter
                     title={'Часов в день'}
                     changeValue={changeHoursPerDay}

@@ -5,7 +5,7 @@ import {Content} from "../content";
 import s from './editTimetable.module.scss'
 import {timeVariantOptions} from "../../../../common/constans/timeVariantOptions";
 import {getCurrentDate} from "../../../../utils/getCurrentDate";
-import {MON_WED_FRI} from "../../../../common/constans/daysOfWeek";
+import {MON_WED_FRI, weekdaysOrder} from "../../../../common/constans/daysOfWeek";
 import {teacherOptions} from "../../../../common/constans/teacherOptions";
 import {breakTimeOptions} from "../../../../common/constans/breakTimeOptions";
 import {classRoomsOptions} from "../../../../common/constans/classRooms";
@@ -33,24 +33,27 @@ export const EditTimetable: FC<EditTimetableType> = ({trigger}) => {
     const [endLessonTime, setEndWorkTime] = useState<string>('');
 
     const [teacher, setTeacher] = useState<string | null>(teacherOptions[0].value)
-    const [breakTimeMinutes, setBreakTimeMinutes] = useState<string | null>(breakTimeOptions[0].value)
+    const [breakTimeMinutes, setBreakTimeMinutes] = useState<number>(breakTimeOptions[0].value)
     const [classRoom, setClassRoom] = useState<string | null>(classRoomsOptions[0].value)
     const onCloseChange = () => setIsOpen(false)
 
-    const data = {
-        groupColor,
-        timeVariant,
-        hoursInCourse,
-        startCourseDate,
-        endCourseDate,
-        workDays,
-        breakTimeMinutes,
-        workHoursPerDay,
-        teacher,
-        classRoom
-    }
     const sendRequest = () => {
-         console.log(data)
+        const sortedWorkDays = workDays.sort((a, b) => weekdaysOrder[a] - weekdaysOrder[b])
+        const data = {
+            groupColor,
+            timeVariant,
+            hoursInCourse,
+            startCourseDate,
+            endCourseDate,
+            startLessonTime,
+            endLessonTime,
+            sortedWorkDays,
+            breakTimeMinutes,
+            workHoursPerDay,
+            teacher,
+            classRoom
+        }
+        console.log(data)
         onCloseChange()
     }
     return (
