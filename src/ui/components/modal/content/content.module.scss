@@ -1,4 +1,5 @@
 @use 'src/styles/mixins';
+
 .container {
   @include mixins.flex(column, center);
   max-width: 700px;
@@ -28,6 +29,7 @@
     .teachers_selector {
       width: 66%;
     }
+
     .audience_selector {
       width: 33%;
     }
@@ -41,3 +43,36 @@
   }
 }
 
+@media (max-width: 850px) {
+  .container {
+    .row {
+      @include mixins.flex(column, center);
+    }
+
+    .row > * {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    .teacher_and_audience_row {
+      @include mixins.flex(column);
+
+      .teachers_selector,
+      .audience_selector {
+        width: 100%;
+      }
+    }
+
+    .school_name_and_color_picker_row {
+      @include mixins.flex(column, space-between, center);
+      gap: 20px;
+      .school_name_input {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+}

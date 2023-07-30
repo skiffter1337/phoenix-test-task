@@ -45,7 +45,7 @@ export const EditTimetable: FC<EditTimetableType> = ({trigger}) => {
         endCourseDate,
         workDays,
         breakTimeMinutes,
-        hoursPerDay: workHoursPerDay,
+        workHoursPerDay,
         teacher,
         classRoom
     }

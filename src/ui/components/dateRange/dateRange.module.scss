@@ -1,18 +1,19 @@
 @use 'src/styles/mixins';
+
 .date_range {
   @include mixins.flex(row, center);
-  position: relative;
-  flex: 0 1 40%;
 
   input[type='date'] {
     text-align: center;
     font-size: 12px;
 
   }
+
   .start_date {
     border-right: none;
     border-radius: 6px 0 0 6px;
   }
+
   .end_date {
     border-left: none;
     border-radius: 0 6px 6px 0;
@@ -27,3 +28,11 @@
   }
 }
 
+
+@media (max-width: 850px) {
+  .date_range {
+    .input {
+      width: 100%;
+    }
+  }
+}

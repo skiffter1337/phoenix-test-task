@@ -32,13 +32,13 @@ export const DateRange: FC<DateRangePropsType> = ({
 
     return (
         <div className={s.date_range}>
-            <div>
+            <div className={s.input}>
                 <Input type={'date'} value={startCourseDate} onChange={changeStartCourseDate} className={s.start_date}/>
             </div>
             <span className={s.until}>
                 до
             </span>
-            <div>
+            <div className={s.input}>
                 <Input type={'date'} value={endCourseDate} className={s.end_date} readOnly/>
             </div>
         </div>

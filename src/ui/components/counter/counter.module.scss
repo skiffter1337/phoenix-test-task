@@ -54,3 +54,17 @@
     }
   }
 }
+
+@media (max-width: 850px) {
+  .content {
+    flex-grow: 1;
+    .value_display {
+      width: auto;
+      flex: 0 1 50%;
+    }
+    .title {
+      width: auto;
+      flex: 0 1 50%;
+    }
+  }
+}
