@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent, FC, useEffect} from 'react';
 import {Input} from "../../input";
 import s from './content.module.scss'
 import {ColorPicker} from "../../colorPicker";
@@ -11,32 +11,57 @@ import {teacherOptions} from "../../../../common/constans/teacherOptions";
 import {classRoomsOptions} from "../../../../common/constans/classRooms";
 import {breakTimeOptions} from "../../../../common/constans/breakTimeOptions";
 import {WorkTime} from "../../workTime";
-import {MON_WED_FRI} from "../../../../common/constans/daysOfWeek";
-import {getCurrentDate} from "../../../../utils/getCurrentDate";
 import {getEndLessonTime} from "../../../../utils/getEndWorkTime";
 
+type ContentPropsType = {
+    setGroupColor: (color: string) => void
+    setTimeVariant: (timeVariant: string) => void
+    timeVariant: string | null
+    hoursPerDay: number
+    setHoursPerDay: (hours: number) => void
+    setHoursInCourse: (hours: number) => void
+    hoursInCourse: number
+    setStartCourseDate: (newStartDate: string) => void
+    setEndCourseDate: (newEndCourseDate: string) => void
+    startCourseDate: string
+    endCourseDate: string
+    setWorkDays: (days: string[]) => void
+    workDays: string[]
+    setEndWorkTime: (time: string) => void
+    setBreakTime: (breakTime: string) => void
+    breakTime: string | null
+    startLessonTime: string
+    endLessonTime: string
+    setTeacher: (teacher: string) => void
+    teacher: string | null
+    setClassRoom: (classRoom: string) => void
+    classRoom: string | null
+}
+export const Content: FC<ContentPropsType> = ({
+                                                  setGroupColor,
+                                                  setTimeVariant,
+                                                  timeVariant,
+                                                  hoursPerDay,
+                                                  setHoursPerDay,
+                                                  setHoursInCourse,
+                                                  hoursInCourse,
+                                                  setStartCourseDate,
+                                                  setEndCourseDate,
+                                                  startCourseDate,
+                                                  endCourseDate,
+                                                  setEndWorkTime,
+                                                  setWorkDays,
+                                                  workDays,
+                                                  setBreakTime,
+                                                  breakTime,
+                                                  startLessonTime,
+                                                  endLessonTime,
+                                                  setTeacher,
+                                                  teacher,
+                                                  setClassRoom,
+                                                  classRoom
+                                              }) => {
 
-export const Content = () => {
-
-    const defaultGroupColor = '#eeeeee'
-
-    const [groupColor, setGroupColor] = useState<string>(defaultGroupColor)
-    const [hoursPerDay, setHoursPerDay] = useState<number>(1)
-
-    const [hoursInCourse, setHoursInCourse] = useState<number>(3)
-
-
-    const [timeVariant, setTimeVariant] = useState<string | null>(timeVariantOptions[0].value)
-    const [startCourseDate, setStartCourseDate] = useState(getCurrentDate())
-    const [endCourseDate, setEndCourseDate] = useState('')
-    const [workDays, setWorkDays] = useState<string[]>(MON_WED_FRI);
-
-    const [startLessonTime, setStartLessonTime] = useState<string>('07:00');
-    const [endLessonTime, setEndWorkTime] = useState<string>('');
-
-    const [teacher, setTeacher] = useState<string | null>(teacherOptions[0].value)
-    const [breakTime, setBreakTime] = useState<string | null>(breakTimeOptions[0].value)
-    const [classRoom, setClassRoom] = useState<string | null>(classRoomsOptions[0].value)
 
 
     const minHoursInCourse = 1
@@ -65,20 +90,31 @@ export const Content = () => {
             </div>
             <div className={s.row}>
                 <Select options={timeVariantOptions} onChange={selectTimeVariant} defaultValue={timeVariant}/>
-                <Counter title={'Всего часов'} changeValue={changeHoursInCourse} value={hoursInCourse}
-                         minValue={minHoursInCourse}/>
-                <DateRange setStartCourseDate={setStartCourseDate} setEndCourseDate={setEndCourseDate}
-                           startCourseDate={startCourseDate} endCourseDate={endCourseDate} workDays={workDays}
-                           hoursInCourse={hoursInCourse} hoursPerDay={hoursPerDay}/>
+                <Counter
+                    title={'Всего часов'}
+                    changeValue={changeHoursInCourse}
+                    value={hoursInCourse}
+                    minValue={minHoursInCourse}/>
+                <DateRange
+                    setStartCourseDate={setStartCourseDate}
+                    setEndCourseDate={setEndCourseDate}
+                    startCourseDate={startCourseDate}
+                    endCourseDate={endCourseDate}
+                    workDays={workDays}
+                    hoursInCourse={hoursInCourse}
+                    hoursPerDay={hoursPerDay}/>
             </div>
             <div className={s.tabs_row}>
                 <Tabs setWorkDays={setWorkDays} workDays={workDays}/>
             </div>
             <div className={s.row}>
-                <Select options={breakTimeOptions} onChange={selectBreakTime} defaultValue={breakTime} />
-                <Counter title={'Часов в день'} changeValue={changeHoursPerDay} value={hoursPerDay}
-                         minValue={minHoursPerDay}
-                         maxValue={maxHoursPerDay}/>
+                <Select options={breakTimeOptions} onChange={selectBreakTime} defaultValue={breakTime}/>
+                <Counter
+                    title={'Часов в день'}
+                    changeValue={changeHoursPerDay}
+                    value={hoursPerDay}
+                    minValue={minHoursPerDay}
+                    maxValue={maxHoursPerDay}/>
                 <WorkTime start={startLessonTime} end={endLessonTime}/>
             </div>
             <div className={s.teacher_and_audience_row}>
