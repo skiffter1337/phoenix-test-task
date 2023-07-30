@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/phoenix-test-task/static/css/main.df7142d8.css",
-    "main.js": "/phoenix-test-task/static/js/main.51981e5a.js",
-    "static/media/closeModal.svg": "/phoenix-test-task/static/media/closeModal.f3b1b5467129387b1845f95ec7e7841e.svg",
+    "main.css": "/phoenix-test-task/static/css/main.d2c201da.css",
+    "main.js": "/phoenix-test-task/static/js/main.010526b7.js",
     "static/media/arrowDown.svg": "/phoenix-test-task/static/media/arrowDown.378fd8774af0684ceb8c.svg",
     "index.html": "/phoenix-test-task/index.html",
-    "main.df7142d8.css.map": "/phoenix-test-task/static/css/main.df7142d8.css.map",
-    "main.51981e5a.js.map": "/phoenix-test-task/static/js/main.51981e5a.js.map"
+    "main.d2c201da.css.map": "/phoenix-test-task/static/css/main.d2c201da.css.map",
+    "main.010526b7.js.map": "/phoenix-test-task/static/js/main.010526b7.js.map"
   },
   "entrypoints": [
-    "static/css/main.df7142d8.css",
-    "static/js/main.51981e5a.js"
+    "static/css/main.d2c201da.css",
+    "static/js/main.010526b7.js"
   ]
 }
