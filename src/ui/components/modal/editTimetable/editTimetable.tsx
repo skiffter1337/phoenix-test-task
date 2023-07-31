@@ -16,12 +16,14 @@ type EditTimetableType = {
 export const EditTimetable: FC<EditTimetableType> = ({trigger}) => {
 
     const defaultGroupColor = '#eeeeee'
+    const defaultWorkHoursPerDay = 1
+    const defaultHoursInCourse = 3
 
     const [isOpen, setIsOpen] = useState(false)
     const [groupColor, setGroupColor] = useState<string>(defaultGroupColor)
-    const [workHoursPerDay, setWorkHoursPerDay] = useState<number>(1)
+    const [workHoursPerDay, setWorkHoursPerDay] = useState<number>(defaultWorkHoursPerDay)
 
-    const [hoursInCourse, setHoursInCourse] = useState<number>(3)
+    const [hoursInCourse, setHoursInCourse] = useState<number>(defaultHoursInCourse)
 
 
     const [timeVariant, setTimeVariant] = useState<string | null>(timeVariantOptions[0].value)
