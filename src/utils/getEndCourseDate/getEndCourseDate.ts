@@ -6,7 +6,7 @@ export const getEndCourseDate = (startCourseDate: string, hoursInCourse: number,
 
     let workDaysCount = 0
 
-    while (workDaysCount < totalDays) {
+    while (workDaysCount < totalDays - 1) {
         const currentDay = daysOfWeek[endDate.getDay()]
         if (workDays.includes(String(currentDay))) workDaysCount++
         endDate.setDate(endDate.getDate() + 1)
