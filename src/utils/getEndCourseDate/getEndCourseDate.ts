@@ -11,5 +11,7 @@ export const getEndCourseDate = (startCourseDate: string, hoursInCourse: number,
         if (workDays.includes(String(currentDay))) workDaysCount++
         endDate.setDate(endDate.getDate() + 1)
     }
+
+    endDate.setDate(endDate.getDate() + 1)
     return endDate.toLocaleDateString('en-ca')
 };
