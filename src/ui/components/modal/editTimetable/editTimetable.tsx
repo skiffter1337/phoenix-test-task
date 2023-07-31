@@ -1,7 +1,7 @@
 import React, {FC, ReactNode, useState} from 'react';
 import {Modal} from "../modal";
 import {Button} from "../../button/button";
-import {Content} from "../content";
+import {Content} from "./content";
 import s from './editTimetable.module.scss'
 import {timeVariantOptions} from "../../../../common/constans/timeVariantOptions";
 import {getCurrentDate} from "../../../../utils/getCurrentDate";

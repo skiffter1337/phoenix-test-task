@@ -1,17 +1,17 @@
 import React, {ChangeEvent, FC, useEffect} from 'react';
-import {Input} from "../../input";
+import {Input} from "../../../input";
 import s from './content.module.scss'
-import {ColorPicker} from "../../colorPicker";
-import {Select} from "../../select/select";
-import {timeVariantOptions} from "../../../../common/constans/timeVariantOptions";
-import {Counter} from "../../counter";
-import {DateRange} from "../../dateRange";
-import {Tabs} from "../../tabs";
-import {teacherOptions} from "../../../../common/constans/teacherOptions";
-import {classRoomsOptions} from "../../../../common/constans/classRooms";
-import {breakTimeOptions} from "../../../../common/constans/breakTimeOptions";
-import {WorkTime} from "../../workTime";
-import {getEndLessonTime} from "../../../../utils/getEndWorkTime";
+import {ColorPicker} from "../../../colorPicker";
+import {Select} from "../../../select/select";
+import {timeVariantOptions} from "../../../../../common/constans/timeVariantOptions";
+import {Counter} from "../../../counter";
+import {DateRange} from "../../../dateRange";
+import {Tabs} from "../../../tabs";
+import {teacherOptions} from "../../../../../common/constans/teacherOptions";
+import {classRoomsOptions} from "../../../../../common/constans/classRooms";
+import {breakTimeOptions} from "../../../../../common/constans/breakTimeOptions";
+import {WorkTime} from "../../../workTime";
+import {getEndLessonTime} from "../../../../../utils/getEndWorkTime";
 
 type ContentPropsType = {
     setGroupColor: (color: string) => void
