@@ -23,15 +23,15 @@
 
   }
 
-  .teacher_and_audience_row {
+  .teacher_and_classroom_row {
     @include mixins.flex(row, space-between);
     gap: 20px;
 
-    .teachers_selector {
+    .teacher_selector {
       width: 66%;
     }
 
-    .audience_selector {
+    .classroom_selector {
       width: 33%;
     }
 
@@ -58,11 +58,11 @@
 
 @media (max-width: 550px) {
   .container {
-    .teacher_and_audience_row {
+    .teacher_and_classroom_row {
       @include mixins.flex(column);
 
-      .teachers_selector,
-      .audience_selector {
+      .teacher_selector,
+      .classroom_selector {
         width: 100%;
       }
     }

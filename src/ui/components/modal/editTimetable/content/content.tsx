@@ -10,7 +10,7 @@ import {Tabs} from "../../../tabs";
 import {teacherOptions} from "../../../../../common/constans/teacherOptions";
 import {classRoomsOptions} from "../../../../../common/constans/classRooms";
 import {breakTimeOptions} from "../../../../../common/constans/breakTimeOptions";
-import {WorkTime} from "../../../workTime";
+import {WorkTimeRange} from "../../../workTimeRange";
 import {getEndLessonTime} from "../../../../../utils/getEndWorkTime";
 
 type ContentPropsType = {
@@ -114,13 +114,13 @@ export const Content: FC<ContentPropsType> = ({
                     value={hoursPerDay}
                     minValue={minHoursPerDay}
                     maxValue={maxHoursPerDay}/>
-                <WorkTime start={startLessonTime} end={endLessonTime}/>
+                <WorkTimeRange start={startLessonTime} end={endLessonTime}/>
             </div>
-            <div className={s.teacher_and_audience_row}>
-                <div className={s.teachers_selector}>
+            <div className={s.teacher_and_classroom_row}>
+                <div className={s.teacher_selector}>
                     <Select options={teacherOptions} onChange={selectTeacher} defaultValue={teacher}/>
                 </div>
-                <div className={s.audience_selector}>
+                <div className={s.classroom_selector}>
                     <Select options={classRoomsOptions} onChange={selectClassRoom} defaultValue={classRoom}/>
                 </div>
             </div>
