@@ -6,12 +6,15 @@ export const getEndCourseDate = (startCourseDate: string, hoursInCourse: number,
 
     let workDaysCount = 0
 
-    while (workDaysCount < totalDays - 1) {
+    while (workDaysCount < totalDays) {
+
+        if(workDays.length === 0) return 0
+
         const currentDay = daysOfWeek[endDate.getDay()]
         if (workDays.includes(String(currentDay))) workDaysCount++
         endDate.setDate(endDate.getDate() + 1)
     }
 
-    endDate.setDate(endDate.getDate() + 1)
+        endDate.setDate(endDate.getDate() - 1)
     return endDate.toLocaleDateString('en-ca')
 };

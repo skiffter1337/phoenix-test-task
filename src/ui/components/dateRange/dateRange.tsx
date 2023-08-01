@@ -6,9 +6,9 @@ import {getEndCourseDate} from "../../../utils/getEndCourseDate";
 
 type DateRangePropsType = {
     setStartCourseDate: (newStartDate: string) => void
-    setEndCourseDate: (newEndCourseDate: string) => void
+    setEndCourseDate: (newEndCourseDate: string | 0) => void
     startCourseDate: string
-    endCourseDate: string
+    endCourseDate: string | 0
     hoursInCourse: number
     workDays: string[]
     hoursPerDay: number

@@ -22,9 +22,9 @@ type ContentPropsType = {
     setHoursInCourse: (hours: number) => void
     hoursInCourse: number
     setStartCourseDate: (newStartDate: string) => void
-    setEndCourseDate: (newEndCourseDate: string) => void
+    setEndCourseDate: (newEndCourseDate: string | 0) => void
     startCourseDate: string
-    endCourseDate: string
+    endCourseDate: string | 0
     setWorkDays: (days: string[]) => void
     workDays: string[]
     setEndWorkTime: (time: string) => void

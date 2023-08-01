@@ -28,7 +28,7 @@ export const EditTimetable: FC<EditTimetableType> = ({trigger}) => {
 
     const [timeVariant, setTimeVariant] = useState<string | null>(timeVariantOptions[0].value)
     const [startCourseDate, setStartCourseDate] = useState(getCurrentDate())
-    const [endCourseDate, setEndCourseDate] = useState<string>('')
+    const [endCourseDate, setEndCourseDate] = useState<string | 0>('')
     const [workDays, setWorkDays] = useState<string[]>(MON_WED_FRI);
 
     const [startLessonTime, setStartLessonTime] = useState<string>('07:00');

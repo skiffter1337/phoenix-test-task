@@ -5,7 +5,7 @@ export type InputPropsType = {
     id?: string
     type?: string
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void
-    value?: string
+    value?: string | 0
     defaultValue?: string
     placeholder?: string
     disabled?: boolean
